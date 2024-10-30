@@ -1,15 +1,22 @@
-# Explica y pon un ejemplo sencillo de una función lambda en Python 3.
-# Una función lambda es una función pequeña y anónima que se define en una sola línea. Se utiliza para operaciones simples que no necesitan un nombre explícito
+"""Crea una lista en la cual cada elemento de esa lista sea una lista con dos valores: tamaño y peso.
+"""
+lista = [
+# tamaño | peso
+    [1.50, 90],
+    [1.85, 110],
+    [2.10, 136],
+    [1.30, 78],
+]
 
-# Una funcion lambda es como una funcion pero muy corta, casi siempre se define en una sola linea y se utiliza para hacer operaciones simples
+"""Utilizando Key functions, haz que esta lista se ordene por mayor altura y, en caso de igualdad, por menor peso."""
 
-suma = lambda x, y: x + y
+sorted(lista, key=lambda altura_peso: (-altura_peso[0], altura_peso[1]))
 
-resultado = suma(3, 2)
-print(resultado)
 
-# Después, pon un ejemplo que utilice las funciones de Python:
-# Usando “map()” (y “list()” e “int()” como apoyo para convertir a lista y a números enteros), 
-# lee desde teclado una cadena de texto formada por números separados por espacios y transfórmala en una lista formada por números enteros.
-# Usando “filter()”, elimina de la cadena anterior los números menores que 10.
-# Con la cadena resultante y usando “reduce()”, devuelve la multiplicación de los elementos de la lista.
+"""Explica en comentarios qué es realmente la “key function”. Pista: en la ayuda se menciona: 
+“El valor del parámetro key debe ser una función (u otro callable) que tome un solo argumento y devuelva una clave para usar con fines de ordenación. 
+Esta técnica es rápida porque la función key se llama exactamente una vez por cada registro de entrada.”"""
+
+
+# Resumido: La key function es un parametro que te ayuda a ordenar, como .sort() en una lista, solo que a comparación de sort() puede
+# comparar en más magnitud. Además de que no modifica el contenido de la lista al usarlo.
