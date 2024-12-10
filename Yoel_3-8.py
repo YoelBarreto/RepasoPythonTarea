@@ -9,8 +9,25 @@ suma = lambda x, y: x + y
 resultado = suma(3, 2)
 print(resultado)
 
-# Después, pon un ejemplo que utilice las funciones de Python:
-# Usando “map()” (y “list()” e “int()” como apoyo para convertir a lista y a números enteros), 
-# lee desde teclado una cadena de texto formada por números separados por espacios y transfórmala en una lista formada por números enteros.
-# Usando “filter()”, elimina de la cadena anterior los números menores que 10.
+"""
+Después, pon un ejemplo que utilice las funciones de Python:
+Usando “map()” (y “list()” e “int()” como apoyo para convertir a lista y a números enteros), 
+lee desde teclado una cadena de texto formada por números separados por espacios y transfórmala en una lista formada por números enteros.
+"""
+
+entrada = input("Ingresa números separados por espacios: ")
+
+numeros = list(map(int, entrada.split()))
+print("Lista original:", numeros)
+
+"""
+Usando “filter()”, elimina de la cadena anterior los números menores que 10.
+"""
+
+numeros_filtrados = list(filter(lambda x: x >= 10, numeros))
+print("Números mayores o iguales a 10:", numeros_filtrados)
+
 # Con la cadena resultante y usando “reduce()”, devuelve la multiplicación de los elementos de la lista.
+
+resultado_multiplicacion = reduce(lambda x, y: x * y, numeros_filtrados)
+print("Resultado de la multiplicación:", resultado_multiplicacion)
